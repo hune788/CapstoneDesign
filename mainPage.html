@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+        <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <link rel="stylesheet" href="mainPageStyle.css">
+        <script src="mainPageScript.js"></script>
+    </head>
+    <body onload="categoryOpen()">
+        <div class="Main">
+            <div class="Header">
+                <img src="./image/icon.png" width="265" height="70" onclick="location.href='mainPage.html'">
+                <input class="search" type="text" placeholder="관심 취미나 지역을 검색해보세요">
+                <div class="userMenu">
+                    <span style="margin-right: 50px;"><b>회원가입</b></span>
+                    <span style="margin-right: 50px;"><b>로그인</b></span>
+                    <span style="margin-right: 50px;"><b>마이페이지</b></span>
+                </div>
+            </div>
+            <div class="category">
+                <span style="font-size: 20px;"><b>카테고리</b></span>
+                <div id="category">
+                </div>
+            </div>
+            <div class="meet">
+                <h1 id="recommendLabel">추천 모임</h1>
+                <div id="recommendMeet">
+                </div>
+                <h1 id="popularLabel">인기 모임</h1>
+                <div id="popularMeet">
+                </div>
+                <h1 id="categoryLabel"></h1>
+                <div id="categoryMeet">
+                </div>
+            </div>
+            <div class="abort">
+                <h3>이벤트</h3>
+                <div class="event">
+                    이벤트
+                </div>
+                <h3>공지시항</h3>
+                <div class="notice">
+                    공지사항
+                </div>
+            <div>
+            <button class="makeMeet" onclick="showPopUp()">모임<br>만들기</button>
+            <div id="create_frame" class="pop_wrap" style="display:none;">
+                <div class="pop_inner">
+                    <h1>모임 만들기</h1>
+                    <button type="button" class="cancelButton" onclick="shutdown()">x</button>
+                    <p>모임 이름</p>
+                    <input id="input_name" type="text" style="background-color: RGB(248,249,251); height: 20px; width: 450px; border: 1px solid black; margin-top: -10px;">
+                    <p>카테고리</p>
+                    <select id="input_category" name="category" id="group_category">
+                        <option value="예술/창작">예술/창작</option>
+                        <option value="운동/스포츠">운동/스포츠</option>
+                        <option value="독서/스터디">독서/스터디</option>
+                        <option value="음악/악기">음악/악기</option>
+                        <option value="게임/오락">게임/오락</option>
+                        <option value="사진/영상">사진/영상</option>
+                    </select>
+                    <!--<p class="dsc">팝업 안내문구 입니다.</p>-->
+                    <p>모임 설명</p>
+                    <textarea id="input_desc" style="height: 60px; width: 450px; resize: none; background-color: RGB(248,249,251); margin-top: -10px;"></textarea>
+                    <p>최대 인원</p>
+                    <input id="input_maxNum" style="height: 30px; width: 100px; background-color: RGB(248,249,251); border: 1px solid black; margin-top: -10px;"type="number" min="1" max="50">
+                    <p>모임 이미지</p>
+                    <input id="input_img" type="file" accept=".gif, .jpg, .png">
+                    <br>
+                    <button class="createButton" onclick="insertMeet()">모임 만들기</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
